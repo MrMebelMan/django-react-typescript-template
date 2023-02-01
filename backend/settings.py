@@ -81,7 +81,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
-JWT_KEY = "insecure-key-change-me"
+JWT_KEY = env('SECRET_KEY')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
