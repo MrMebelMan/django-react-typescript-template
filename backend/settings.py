@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'api',
     'rest_framework',
     'rest_framework_simplejwt',
 ]
@@ -155,6 +156,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CAPTCHA_EXPIRATION_SECONDS = 30
+CAPTCHA_LENGTH_CHARS = 2 if ENVIRONMENT == 'development' else 6
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

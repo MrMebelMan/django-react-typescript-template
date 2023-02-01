@@ -13,11 +13,11 @@ stdenv.mkDerivation {
     # python310Packages.whitenoise
     python310Packages.djangorestframework
     python310Packages.djangorestframework-simplejwt
-    # python310Packages.cryptography
+    python310Packages.cryptography
     # python310Packages.setuptools
     python310Packages.django-cors-headers
-    # python310Packages.pillow
-    # python310Packages.pyjwt
+    python310Packages.pillow
+    python310Packages.pyjwt
     # python310Packages.intelhex
     python310Packages.psycopg2
     # python39Packages.captcha - add when merged to nixpkgs
