@@ -33,4 +33,39 @@ export const GlobalStyle = createGlobalStyle`
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  .card {
+    background-color: initial;
+    border: initial;
+    margin-top: 5rem;
+  }
+
+  .btn.btn-primary.btn-block.login {
+    width: 100%;
+    margin-top: 1.5em;
+  }
+
+  .profile-img-card {
+    max-width: 15rem;
+  }
+
+  .alert-danger {
+    background-color: initial;
+    border: initial;
+  }
+
+  .btn-primary {
+    background-color: #f99260;
+    border-color: #c6734c;
+  }
+
+  .btn-primary:hover {
+    background-color: #ea6f33;
+    border-color: #c6734c;
+  }
+
+  .btn-primary:disabled {
+    background-color: #bdbdbd;
+    border-color: #bcbcbc;
+  }
 `;

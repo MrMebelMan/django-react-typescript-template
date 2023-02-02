@@ -26,6 +26,8 @@ import { ThemeProvider } from 'styles/theme/ThemeProvider';
 
 import reportWebVitals from 'reportWebVitals';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // Initialize languages
 import './locales/i18n';
 
