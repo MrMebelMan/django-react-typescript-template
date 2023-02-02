@@ -1,9 +1,12 @@
-import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { ReactComponent as DocumentationIcon } from './assets/documentation-icon.svg';
 import { ReactComponent as GithubIcon } from './assets/github-icon.svg';
+import { ReactComponent as LoginIcon } from './assets/login.svg';
 
 export function Nav() {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <Wrapper>
       <Item
@@ -24,6 +27,17 @@ export function Nav() {
         <GithubIcon />
         Github
       </Item>
+      {location.pathname !== '/login' && (
+        <Item
+          className="login-link"
+          href="/login"
+          title="Log in"
+          rel="noopener noreferrer"
+        >
+          <LoginIcon className="login-icon" />
+          Login
+        </Item>
+      )}
     </Wrapper>
   );
 }

@@ -4,7 +4,9 @@ import styled from 'styled-components/macro';
 export function Logo() {
   return (
     <Wrapper>
-      <Title>React Boilerplate</Title>
+      <a className="no-underline" href="/">
+        <Title>React Boilerplate</Title>
+      </a>
       <Description>Create React App Template</Description>
     </Wrapper>
   );

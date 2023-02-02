@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { NavBar } from 'app/components/NavBar';
@@ -58,7 +57,7 @@ export function LoginPage() {
                 validationSchema={validationSchema}
                 onSubmit={handleLogin}
               >
-                <Form>
+                <Form className="mx-auto d-block">
                   <FormGroup>
                     <FormLabel htmlFor="username">Username</FormLabel>
                     <Field

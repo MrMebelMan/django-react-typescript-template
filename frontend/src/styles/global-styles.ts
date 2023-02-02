@@ -68,4 +68,17 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #bdbdbd;
     border-color: #bcbcbc;
   }
+
+  .alert {
+    padding: 0;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  .login-icon {
+    width: 23px;
+    margin-right: 6px;
+  }
 `;
