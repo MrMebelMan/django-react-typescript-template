@@ -8,7 +8,6 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import Button from 'react-bootstrap/Button';
-// import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -19,20 +18,15 @@ export function LoginPage() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const validationSchema = () => {
+  const validate = () => {
     return Yup.object().shape({
       username: Yup.string().required('This field is required!'),
       password: Yup.string().required('This field is required!'),
     });
   };
 
-  const initialValues = {
-    username: '',
-    password: '',
-  };
-
-  const handleLogin = (formValue: { username: string; password: string }) => {
-    // const { username, password } = formValue;
+  const handleSubmit = (formValue: { username: string; password: string }) => {
+    validate();
     setMessage('');
     setLoading(true);
   };
@@ -53,9 +47,9 @@ export function LoginPage() {
             <Card>
               <H1 className="mx-auto d-block">Log in to your account</H1>
               <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={handleLogin}
+                initialValues={{ username: '', password: '' }}
+                validationSchema={validate}
+                onSubmit={handleSubmit}
               >
                 <Form className="mx-auto d-block">
                   <FormGroup>

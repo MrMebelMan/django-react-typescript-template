@@ -6,7 +6,6 @@ import { ReactComponent as LoginIcon } from './assets/login.svg';
 
 export function Nav() {
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <Wrapper>
       <Item
