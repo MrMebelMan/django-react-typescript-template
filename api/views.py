@@ -8,6 +8,11 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from datetime import datetime, timedelta, timezone
 from json import dumps
+from captcha.image import ImageCaptcha
+from base64 import b64encode
+import jwt
+import hmac
+import hashlib
 
 from api.models import SolvedCaptcha
 
