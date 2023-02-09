@@ -81,4 +81,9 @@ export const GlobalStyle = createGlobalStyle`
     width: 23px;
     margin-right: 6px;
   }
+
+  .logout-icon {
+    width: 23px;
+    margin-right: 6px;
+  }
 `;

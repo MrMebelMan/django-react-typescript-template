@@ -1,11 +1,32 @@
+import { checkIsLoggedIn, clearSessionCookie } from 'app/utils';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { ReactComponent as DocumentationIcon } from './assets/documentation-icon.svg';
 import { ReactComponent as GithubIcon } from './assets/github-icon.svg';
 import { ReactComponent as LoginIcon } from './assets/login.svg';
+import { ReactComponent as LogoutIcon } from './assets/logout.svg';
+// import { useAuth } from 'app/auth';
 
 export function Nav() {
   const location = useLocation();
+  // const { user, logout } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const checkLoggedIn = async () => {
+    setIsLoggedIn(await checkIsLoggedIn());
+  };
+
+  useEffect(() => {
+    checkLoggedIn();
+  });
+
+  const logOut = () => {
+    clearSessionCookie();
+    // logout();
+    window.location.href = '/';
+  };
+
   return (
     <Wrapper>
       <Item
@@ -26,7 +47,8 @@ export function Nav() {
         <GithubIcon />
         Github
       </Item>
-      {location.pathname !== '/login' && (
+      {/* {location.pathname !== '/login' && !user && ( */}
+      {location.pathname !== '/login' && !isLoggedIn && (
         <Item
           className="login-link"
           href="/login"
@@ -34,7 +56,20 @@ export function Nav() {
           rel="noopener noreferrer"
         >
           <LoginIcon className="login-icon" />
-          Login
+          Log in
+        </Item>
+      )}
+      {/* {location.pathname !== '/logout' && user && ( */}
+      {location.pathname !== '/logout' && isLoggedIn && (
+        <Item
+          className="login-link"
+          // href="/logout"
+          title="Log out"
+          rel="noopener noreferrer"
+          onClick={logOut}
+        >
+          <LogoutIcon className="logout-icon" />
+          Log out
         </Item>
       )}
     </Wrapper>
