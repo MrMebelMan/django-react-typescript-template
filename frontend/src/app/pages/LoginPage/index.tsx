@@ -4,7 +4,6 @@ import { NavBar } from 'app/components/NavBar';
 import { PageWrapper } from 'app/components/PageWrapper';
 import { H1 } from './components/H1';
 import axios from 'axios';
-// import { userContext } from 'app/context';
 
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -17,15 +16,12 @@ import Container from 'react-bootstrap/Container';
 import FormGroup from 'react-bootstrap/FormGroup';
 import { FormLabel } from 'app/components/FormLabel';
 import { config, setSessionCookie } from 'app/utils';
-// import { useAuth } from 'app/auth';
 
 export function LoginPage() {
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [captchaImage, setCaptchaImage] = useState('');
   const [captchaChallenge, setCaptchaChallenge] = useState('');
-  // const { user, setUser } = useContext(userContext);
-  // const { user, login, logout } = useAuth();
 
   const validate = () => {
     return Yup.object().shape({
@@ -91,7 +87,6 @@ export function LoginPage() {
 
   return (
     <>
-      {/* <userContext.Provider value={{ user, setUser: login }}> */}
       <Helmet>
         <title>Login Page</title>
         <meta
@@ -188,7 +183,6 @@ export function LoginPage() {
           </Col>
         </Container>
       </PageWrapper>
-      {/* </userContext.Provider> */}
     </>
   );
 }

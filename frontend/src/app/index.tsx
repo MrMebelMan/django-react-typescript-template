@@ -16,7 +16,6 @@ import { HomePage } from './pages/HomePage/Loadable';
 import { LoginPage } from './pages/LoginPage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
-// import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -33,14 +32,6 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* <Route
-          path="/"
-          element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <HomePage />
-            </ProtectedRoute>
-          }
-        /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <GlobalStyle />
